@@ -157,14 +157,12 @@ Once you've changed the CRS to EPSG:4326, you'll see the **North/West/Earth/Sout
 
 In this case, your top left is `48.241863045, -124.783742788` and your bottom right is `24.440317236,-73.951903924`.
 
-**Life is great.**
+![](images/output-neat.jpg)
 
-## 🎉 🗺 🎉 🗺 🎉
+**Life is great.** 🎉 🗺 🎉 🗺 🎉
+
+> I just put the coordinates in there with Photoshop, that's not black magic
 
 ## A little bit more, maybe?
 
 To turn the cropped image into something useful, go find the `.tif` you saved (remember when you picked to save it as a real file instead of a temporary file?), open it in literally any image editing software, and re-save it as a jpeg.
-
-![](images/output-neat.jpg)
-
-> I just put the coordinates in there with Photoshop, that's not black magic
