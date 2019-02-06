@@ -14,22 +14,23 @@ Yes, it would be nice if the earth were a nice flat projection in Google Earth. 
 2. Browse to where you want to be.
 3. Click the **Save image** button
 4. Increase the resolution of your image + remove all of the extraneous elements
+5. Click **Save image** to save your image
 
 ![Google earth export](images/00-google-earth.png)
 
-## Georeference in QGIS 3
+## Adding our reference layer
 
-### Adding your reference layer
+First we need to add a Google Maps-ish underlay. We'll use it to match up where your map belongs.
 
-Add an "XYZ layer," which is like the Google Maps underlay you're going to use to match up where your map belongs. I'm using OpenStreetMap, because it's apparently already on my QGIS.
+These are called "XYZ" layers, and they're built into QGIS. You can click and drag them from the **Browser** panel into your **Layers** panel. I'm using OpenStreetMap, because it's apparently the only one already in QGIS.
 
 ![XYZ layer](images/01-xyz.png)
 
 > If you don't have the Browser panel, you can select **View > Panels > Browser** to make it appear.
 
-But you probably want something with mountains and stuff so you can match up your map better, right?
+But honestly, that isn't going to be helpful! We probably want something with mountains and stuff so we can match up our map better, right?
 
-Right-click, click **New Connection**, and create a new XYZ layer. I think [this site](https://leaflet-extras.github.io/leaflet-providers/preview/) is a pretty good overview of providers, you just need the whole `{z}/{x}/{y}.png` URL thing. For example, a nice one might be:
+Right-click **XYZ Tiles** and click **New Connection**. We'll need the URL format - I think [this site](https://leaflet-extras.github.io/leaflet-providers/preview/) is a pretty good overview of providers, you just need the whole `{z}/{x}/{y}.png` URL thing. For example, a nice one might be **ESRI.WorldImagery**, since it has mountains and stuff:
 
 ```
 https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}
@@ -45,7 +46,9 @@ And then drag it to your map!
 
 ![better XYZ layer from ESRI](images/01-xyz-better.png)
 
-### Georeferencing
+> {z} is zoom, and {x} and {y} are the [coordinates of the file](https://developers.google.com/maps/documentation/javascript/coordinates#tile-coordinates).
+
+## Georeferencing
 
 Now we need to georeference, which is how you give your image a latitude/longitude (and stretch it to make it look 'right').
 
@@ -107,9 +110,9 @@ If it doesn't look good, delete the layer, open the georeferencer window (rememb
 
 Once you're satisfied, you can close the georeferencing plugin. It'll ask if you want to save the points.... but I say no!
 
-## Clipping your raster
+## Clipping our raster
 
-Now you have a beautiful image that is way too big and with all kinds of weird black stuff where it got stretched to fit on the map.
+Now we have a beautiful image that is way too big and with all kinds of weird black stuff where it got stretched to fit on the map.
 
 ![](images/03-black-stuff.png)
 
