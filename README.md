@@ -165,4 +165,6 @@ In this case, your top left is `48.241863045, -124.783742788` and your bottom ri
 
 To turn the cropped image into something useful, go find the `.tif` you saved (remember when you picked to save it as a real file instead of a temporary file?), open it in literally any image editing software, and re-save it as a jpeg.
 
-**Done.**
+![](images/output-neat.jpg)
+
+> I just put the coordinates in there with Photoshop, that's not black magic
