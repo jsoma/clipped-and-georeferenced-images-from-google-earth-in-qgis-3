@@ -1,8 +1,10 @@
-# Georeference Google Earth images (or any other images) in QGIS 3 
+# Georeference + Crop Google Earth images (or any other images) in QGIS 3
 
-...and then crop the georeferenced images so they are rectangles, and not warped monstrosities.
+![](images/output.jpg)
 
-(...and then get the latitude and longitude of the top-left corner and the bottom-right corner)
+So we're going to georeference the image, then crop the georeferenced images so they are rectangles, and not warped monstrosities. and **BONUS** get the latitude and longitude of the top-left corner and the bottom-right corner!!! 
+
+Unbelievable!
 
 ## Export an image from Google Earth
 
